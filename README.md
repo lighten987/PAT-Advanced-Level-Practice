@@ -266,7 +266,8 @@ int main()
     sum=(sum*0.65-1)*2;  
     printf("%.2f",sum);  
 	return 0;  
-}   
+}  
+
 //标准答案  
 >#include<cstdio>  
 char S[3] = {'W','T','L'};  
