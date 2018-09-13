@@ -175,7 +175,7 @@ int main()
 用数组读入，然后用二维数组上半斜列去表示i-j的总和，然后找最大**  
  
 ***//两次循环遍历的第二次自有累加，想得太复杂了***   
-#include<iostream>  
+>#include<iostream>  
 using namespace std;  
 int main()  
 {  
