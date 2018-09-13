@@ -171,50 +171,39 @@ int main()
 
 /*  
 1007   
-**Maximum Subsequence Sum 求最大子串和 输出和与开始，结束的值
-用数组读入，然后用二维数组上半斜列去表示i-j的总和，然后找最大**  
+**Maximum Subsequence Sum 求最大子串和 输出和与开始，结束的值**  
  
-***//两次循环遍历的第二次自有累加，想得太复杂了***   
+***思路：遍历开头，再遍历后面的和，有新的大值更新max并更新头尾 ***   
 >#include<iostream>  
 using namespace std;  
 int main()  
 {  
 	int n;  
-	cin>>n;   
-	int a[n];  
+	cin>>n;  
+	int a[n] = {0};  
 	int begin,end;  
-	for(int i=0;i<n;i++)  
+	for(int i = 0; i< n; i++)  
 	{  
 		cin>>a[i];  
-	}  
-	int b[n][n]={0};  
-	int sum=0;  
-	for(int i=0;i<n-1;i++)  
-	{  
-		for(int j=i+1;j<n;j++)  
-		{  
-			sum=0;  
-			for(int k=i;k<=j;k++)  
-			{  
-				sum+=a[k];  
-			}  
-			b[i][j]=sum;  
-		}  
-	}  
-	int max=0;   
-	for(int i=0;i<n-1;i++)  
-	{  
-		for(int j=i+1;j<n;j++)  
-		{  
-			if(b[i][j]>max){  
-				max=b[i][j];  
-				begin=i;  
-				end=j;  
+	}   
+	int max = -1; 	   
+    for(int i = 0; i<n-1; i++){  
+	    int temp = 0;  
+    	for(int j = i; j< n; j++){  
+    		temp += a[j];  
+    		if(temp > max){  
+    			max = temp;  
+    			begin = a[i];  
+    			end = a[j];  
 			}  
 		}  
 	}  
-	if(max==0)cout<<max<<" "<<a[0]<<" "<<a[n-1];  
-	else cout<<max<<" "<<begin<<" "<<end;  
+	if(max<0){  
+		max = 0;  
+		begin = a[0];  
+		end = a[n-1];  
+	}  
+	cout<<max<<" "<<begin<<" "<<end<<endl;  
 	return 0;  
 }  
   
@@ -248,7 +237,7 @@ int main(){
 
 /*  
 1011   
-**World Cup Betting   鬼大爷知道错在哪里，真的很扯**   
+**World Cup Betting**   
 
 >#include<iostream>  
 using namespace std;  
@@ -256,13 +245,15 @@ int main()
 {  
 	char c[3]={'W','T','L'};  
 	double sum=1.0,max=0;  
-	double a[3]={0};  
 	int count;  
 	for(int j=0;j<3;j++)  
 	{  
+		double max=0;		  
 	for(int i=0;i<3;i++)  
 	{  
-		scanf("lf",&a[i]);  
+	    double a[3]={0.0};  
+	//	scanf("lf",&a[i]);  
+	    cin>>a[i];   
 		if(a[i]>max)  
 		{  
 			max=a[i];  
@@ -273,9 +264,9 @@ int main()
 	sum*=max;  
     }  
     sum=(sum*0.65-1)*2;  
-    printf("%.2f",sum);   
+    printf("%.2f",sum);  
 	return 0;  
-}  
+}   
 //标准答案  
 >#include<cstdio>  
 char S[3] = {'W','T','L'};  
