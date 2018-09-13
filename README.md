@@ -518,7 +518,7 @@ int main()
 */   
 
 /*  
-1038  部分正确   
+1038  
 **Recover the Smallest Number  给一系列数字，组一个最小数字**
 
 ***思路：字符串数组读入，去判断相同位数上的数字大小，排序***    
@@ -586,8 +586,53 @@ int main()
 		cout<<s[i];  
 	}  
 	return 0;  
+} 
+	
+***//大神思路：比较每两个相邻的元素，如果交换可以使得整个序列变大，就交换之，直到最后没有任何两个值之间能进行交换***  
+***注释掉的地方是只考虑第一个字符串左起有零的情况，但是有一个测试点通不过，改为先整合为大字符串再判断左起零，包括全零输出零的情况，AC***
+>#include<iostream>  
+#include<algorithm>  
+using namespace std;  
+bool cmp(string &a,string &b)  //实现大的在前，用地址操作 改变顺序   
+{  
+	return a+b < b+a;  
 }   
-*/  
+int main()  
+{  
+	int n;  
+	cin>>n;  
+	string s[n];  
+	for(int i = 0; i<n; i++){  
+		cin>>s[i];  
+	}  
+	sort(s,s+n,cmp);   
+/*  
+	//第一个数去掉左起的零  
+	int t;    
+	for(int j = 0; j<s[0].size(); j++){  
+		if(s[0][j] != '0'){  
+			t = j;  
+			break;  
+		}   
+	}   
+	for(int j = t; j<s[0].size(); j++){  
+		cout<<s[0][j];  
+	}
+	for(int i = 1; i<n; i++){  
+		cout<<s[i];  
+	}  
+*/    
+    string out;  
+    for(int i = 0; i<n; i++){  
+    	out += s[i];  
+	}  
+	int j;    
+	for( j = 0; j<out.size()&&out[j]=='0'; j++);  
+	if(j==out.size())cout<<"0";  
+	else printf("%s",out.c_str()+j);  
+	return 0;  
+}   
+*/    
 
 /*  
 1041   
