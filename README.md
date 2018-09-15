@@ -31,7 +31,7 @@ int main()
 /*  
 1002   
 A+B for Polynomials  
-**多项式求和，用数组做  注意输出格式**   
+**多项式求和，用数组做   注意输出格式**   
 
 >#include<iostream>  
 using namespace std;  
@@ -298,8 +298,8 @@ char S[3] = {'W','T','L'};
 ***思路：node里面填充，第一个参数为小循环次数，小循环里面装入vector，更新local，根据成绩排序，  
           更新local_rank，放入大的vector，大的vector在小循环执行完后根据成绩更新final_rank  
           初始化小vector时一开始放在小循环外，然后clear，测试例子通不过，将小vector放入小循环开头初始化  
-		  例子可以通过，但是测试点部分通过   
-		  通过重新审题，发现问题可能出在cmp函数里，即相同成绩的按序号排序上，更改后AC***   
+          例子可以通过，但是测试点部分通过   
+	  通过重新审题，发现问题可能出在cmp函数里，即相同成绩的按序号排序上，更改后AC***   
  
 >#include<iostream>  
 #include<vector>  
@@ -350,9 +350,9 @@ int main()
 			}  
 			vcount.push_back(v[j]);	  
 //			v.clear();  
-	//		for(int i = m-1; i>=0; i++){  
-	//			v.pop_back(v[i]);  
-	//		}  
+//		        for(int i = m-1; i>=0; i++){  
+//			v.pop_back(v[i]);  
+//		}  
 		}  
 	}   
 	//更新final_rank   
@@ -382,7 +382,7 @@ int main()
 1036    
 **Boys vs Girls 给出一系列学生的信息，第一排输出女生中最高成绩对应的名字和学号，  
               第二排输出男生中最低成绩对应的名字和学号，第三排输出女生与男生成绩的差值  
-			  若有对应项没有信息，对应位置输出Absent，第三排输出NA**  
+	      若有对应项没有信息，对应位置输出Absent，第三排输出NA**  
 			  
 ***思路：用两个vector<node>分别存储信息，排序后判断再计算***   
  
