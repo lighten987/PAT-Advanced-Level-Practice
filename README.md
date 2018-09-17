@@ -838,4 +838,30 @@ int main()
 	else cout<<"No"<<endl;  
 	}  
 }   
+*/ 
+			      
+			      /*
+**1027 Colors in Mars 十进制转13进制0-9,ABC，不足两位左起放0，开始有个"#"**   
+   
+>#include<iostream>  
+using namespace std;  
+int main()  
+{  
+	int k = 0;  
+	for(int i = 0 ; i < 3; i++){  
+	    char c[14] = {"0123456789ABC"};  
+		int temp;  
+		cin>>temp;  
+		if(k == 0){  
+			cout<<"#";  
+			k++;  
+		}  
+		int high,low;  
+		high = temp / 13;  
+		low = temp % 13;  
+        cout<<c[high]<<c[low];  
+	}  
+	return 0;  
+}  
 */  
+  
