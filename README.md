@@ -789,4 +789,53 @@ int main()
 	}  
 	return 0;  
 }  
-*/   
+*/  
+	
+/*
+**1015 Reversible Primes 给一个整数，给一个进制，判断这个数和进制转换后的相反数(同一进制)是否都为素数，若是则输出Yes 否则输出No**
+
+思路：进制转换，判断素数的结合   
+ 
+>#include<iostream>  
+#include<cmath>  
+using namespace std;  
+bool IsLeap(int n)  
+{  
+	if(n<2) return false;  
+	for(int i = 2; i<= sqrt(n); i++){  
+		if(n%i == 0)return false;  
+	}  
+	return true;  
+}  
+int main()  
+{   
+    int a[12] = {0};  
+    int b[12] = {0};  
+	while(1){  
+	int count,m;  
+	cin>>count;  
+	int hh = count;  
+	if(count<0){  
+		return 0;  
+	}  
+	else cin>>m;  
+	int k = 0;  
+	while(count>0){  
+		a[k] = count % m;  
+		count = count / m;  
+		k++;  
+	}  
+	int t = 0;  
+	for(int j = k-1; j >= 0; j--){  
+		b[t] = a[j];  
+		t++;  
+	}  
+	int sum = 0;   
+	for(int i = 0; i < k; i++){   
+		sum += b[i]*pow(m,i);  
+	}   
+	if(IsLeap(hh) && IsLeap(sum)) cout<<"Yes"<<endl;  
+	else cout<<"No"<<endl;  
+	}  
+}   
+*/  
