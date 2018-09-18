@@ -864,4 +864,27 @@ int main()
 	return 0;  
 }  
 */  
-  
+
+/*  
+**1031 Hello World for U  给定一个字符串，输出为u型**   
+>#include<iostream>  
+#include<cstring>   
+using namespace std;  
+int main()  
+{  
+	string s;  
+	cin>>s;  
+	int len = s.size();  
+	len = len +2;   
+	int lie,hang;  
+	hang = len / 3;  //总行数   
+	lie = len - 2*hang; //总列数   
+	for(int i = 0; i < hang-1; i++){  
+		cout<<s[i];  
+		for(int j = 0; j < lie-2; j++)cout<<" ";  
+		cout<<s[s.size()-1-i]<<endl;  
+	}  
+	for(int i = hang-1;i<hang+lie-1;i++)cout<<s[i];   
+	return 0;  
+}  
+*/      
