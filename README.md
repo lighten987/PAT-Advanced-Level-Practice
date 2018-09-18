@@ -888,3 +888,53 @@ int main()
 	return 0;  
 }  
 */      
+
+/*  
+**1035 Password  敏感字符替换**   
+
+>#include<iostream>  
+#include<cstring>  
+#include<vector>  
+using namespace std;  
+struct node  
+{  
+	string id;  
+	string password;  
+};  
+int main()  
+{  
+	int n;  
+	cin>>n;  
+	string id;  
+	string password;  
+	int sum = 0;   
+	vector<node> v;  
+	for(int i = 0 ;i < n; i++){  
+		int flag = 0;  
+		cin>>id>>password;  
+		for(int i = 0 ; i < password.size(); i++){  
+			if(password[i] == '1' || password[i] == '0' || password[i] == 'l' || password[i] == 'O'){  
+				if(password[i] == '1') password[i] = '@';  
+				else if(password[i] == '0') password[i] = '%';    
+				else if(password[i] == 'l') password[i] = 'L';  
+				else if(password[i] == 'O') password[i] = 'o';  
+				flag = 1;  
+			}  
+		}  
+		if(flag == 1){  
+			sum++;  
+			v.push_back(node{id,password});  
+		}  
+	}  
+	if(sum == 0 && n ==1)printf("There is 1 account and no account is modified\n");  
+	else if(sum == 0 && n>1)printf("There are %d accounts and no account is modified\n",n);  
+	else{  
+		cout<<v.size()<<endl;  
+		for(int i = 0;i<v.size();i++){  
+				cout<<v[i].id<<" "<<v[i].password<<endl;  
+		}  
+	}  
+	return 0;  
+}   
+*/  
+									
