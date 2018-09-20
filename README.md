@@ -937,4 +937,47 @@ int main()
 	return 0;  
 }   
 */  
-									
+
+/*  
+1148 Werewolf - Simple Version  
+
+>#include<iostream>  
+#include<cmath>  
+using namespace std;  
+int main()  
+{  
+	int n;  
+	cin>>n;  
+	int a[n+1];  
+	for(int i = 1; i <= n; i++){  
+		cin>>a[i];  
+	}	  
+	for(int i = 1 ; i < n ; i++){  
+		for(int j = i+1 ; j <= n ; j++){  
+			int b[n+1] = {0};  
+			int count_lang = 0;  
+			int count_pm = 0;  
+			b[i] = 1;  
+			b[j] = 1;  
+			for(int k = 1 ; k <= n ; k++){  
+				if(a[k]<0 && (b[abs(a[k])]!=1)){  
+					if(k == i || k == j) count_lang++;  
+					else count_pm++;  
+				}  
+				else if(a[k]>0 && (b[abs(a[k])]!=0)){  
+					if(k == i || k == j) count_lang++;  
+					else count_pm++;  
+				}  
+			}   
+			if(count_lang == 1 &&count_pm == 1){  
+				cout<<i<<" "<<j<<endl;  
+				return 0;  
+			}  
+		}  
+	}  
+	cout<<"No Solution";  
+	return 0;  
+}   
+*/	  
+	
+	
