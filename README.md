@@ -980,4 +980,32 @@ int main()
 }   
 */	  
 	
+
+/*  
+1144 The Missing Number   
+ 
+>#include<iostream>  
+#include<algorithm>  
+using namespace std;  
+int main()  
+{  
+	int n;  
+	cin>>n;  
+	int a[100010] = {0};  
+	for(int i = 0 ; i < n ; i++){  
+		int k;  
+		cin>>k;  
+		if(k>0 && k<100010)  
+		a[k]++;  
+	}  
+	for(int i = 1 ; i < 100010 ; i++){  
+		if(a[i] == 0){  
+			cout<<i<<endl;  
+			break;  
+		}  
+	}  
+	return 0;  
+}     
+*/	  
+	
 	
