@@ -1008,4 +1008,77 @@ int main()
 }     
 */	  
 	
-	
+/*  
+1136 A Delayed Palindrome   直接字符串读入  cin>>str  字符串内直接交换    
+1079 延迟的回文数 多函数操作   
+
+>#include<iostream>  
+using namespace std;   
+int is(string str)  
+{  
+	int flag=1;  
+	for(int i=0;i<str.length()/2;i++)  
+	{  
+		if(str[i]!=str[str.length()-i-1])  
+		{  
+			flag=0;  
+			break;  
+		}  
+	}  
+    return flag;  
+}  
+int main()  
+{  
+	int count=0;  
+	string str;  
+	cin>>str;  
+	if(is(str))  
+	{  
+		cout<<str<<" is a palindromic number.";  
+		return 0;  
+	}  
+	while(1)  
+	{  
+		if(count==10)  
+		{  
+			cout<<"Not found in 10 iterations.";  
+			break;  
+		}  
+		string str1,str2;  
+		str1=str2=str;  
+		for(int i=0;i<str1.length()/2;i++)  
+		{   
+			char k=str1[i];  
+			str1[i]=str1[str1.length()-i-1];  
+			str1[str1.length()-i-1]=k; 	   		
+		}  
+		int c=0;  
+		for(int i=0;i<str.length();i++)  
+		{  
+			c=c+str[i]-'0'+str1[i]-'0';  
+			str2[i]=c%10+'0';   
+			c/=10;   //有进位自动取1，无进位就是0   
+		}  
+		if(c!=0)  
+		{  
+			str2+=c+'0';  
+		}  
+		for(int i=0;i<str2.length()/2;i++)  
+		{  
+			char k=str2[i];  
+			str2[i]=str2[str2.length()-i-1];  
+			str2[str2.length()-i-1]=k; 	  		
+		}  
+		cout<<str<<" + "<<str1<<" = "<<str2<<endl;  
+		if(is(str2))  
+		{  
+			cout<<str2<<" is a palindromic number.";  
+			break;  
+		}  
+		str=str2;  
+		count++;  
+	}  
+	return 0;  
+}  
+*/	  
+				     
