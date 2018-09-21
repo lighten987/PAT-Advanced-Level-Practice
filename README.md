@@ -1081,4 +1081,37 @@ int main()
 	return 0;  
 }  
 */	  
-				     
+
+/*  
+1132 Cut Integer  
+考虑分母不为零的情况  //提示浮点数错误     
+
+>#include<iostream>  
+#include<string.h>  
+using namespace std;  
+int main()  
+{  
+	int n;  
+	cin>>n;  
+	for(int i = 0 ; i < n ; i++){  
+		string s;  
+		cin>>s;  
+		int sum1 = 0,sum2 = 0,sum3 = 0;  //sum = sum*10 + 这个数   
+		for(int i = 0 ; i < s.size() ; i++){  
+			sum1 = sum1 * 10 + (s[i] - '0');  
+		}  
+		//前半部分截取   
+		for(int j = 0 ; j < s.size()/2 ; j++ ){  
+			sum2 = sum2 * 10 + (s[j] - '0');  
+		}  
+		//后半部分截取   
+		for(int q = s.size()/2 ; q < s.size() ; q++ ){  
+			sum3 = sum3 * 10 + (s[q] - '0');  
+		}  
+		if(sum2 == 0 || sum3 == 0) cout<<"No"<<endl;  
+		else if(sum1%(sum2*sum3) == 0)cout<<"Yes"<<endl;  
+		else cout<<"No"<<endl;  
+	}  
+	return 0;  
+}  
+*/    
