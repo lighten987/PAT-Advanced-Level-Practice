@@ -3,7 +3,7 @@
 
 /*
 1001   
-A+B Format  
+A+B Format     
 **if else 语句中，用升序去做有个测试点通不过** 
 
 >#include<iostream>  
@@ -522,7 +522,6 @@ int main()
 **Recover the Smallest Number  给一系列数字，组一个最小数字**
 
 ***思路：字符串数组读入，去判断相同位数上的数字大小，排序***    
-
 >include<iostream>  
 using namespace std;  
 int main()  
